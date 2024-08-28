@@ -1,0 +1,49 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="bg-gray-900 text-gray-100">
+		<!-- Header -->
+		<header class="bg-gray-800 text-gray-100 py-4">
+			<div class="container mx-auto flex justify-between items-center px-4">
+				<div class="text-xl font-bold">
+					<a href="#" class="hover:underline hover:text-sky-400">Sayyid Zavic</a>
+				</div>
+				<nav>
+					<ul class="flex space-x-6">
+						<li><a href="#about" class="hover:underline hover:text-sky-400">About</a></li>
+						<li><a href="#projects" class="hover:underline hover:text-sky-400">Project</a></li>
+						<!-- <li><a href="http://blog.sayyidzavic.my.id" class="hover:underline hover:text-sky-400">Blog</a></li> -->
+						<li><a href="#contact" class="hover:underline hover:text-sky-400">Contact</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<!-- Main Content -->
+		<main>
+			<slot />
+		</main>
+
+		<!-- Footer -->
+		<footer class="bg-gray-800 text-gray-100 py-4">
+			<div class="container mx-auto text-center">
+				<p>&copy; 2024 Sayyid Zavic. All rights reserved.</p>
+			</div>
+		</footer>
+	</body>
+</html>
